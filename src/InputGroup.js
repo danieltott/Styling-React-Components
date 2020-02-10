@@ -1,9 +1,10 @@
 import React from 'react'
+import Alert from './Alert'
 
 const InputGroup = ({ children, error }) => (
   <div>
     {children}
-    {error && <div>{error}</div>}
+    {error && <Alert>{error}</Alert>}
   </div>
 )
 

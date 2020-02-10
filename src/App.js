@@ -7,7 +7,7 @@ import Alert from './Alert'
 import Main from './Main'
 
 export default function App() {
-  const { name, comment, form, reset, state } = useForm()
+  const { name, phone, comment, form, reset, state } = useForm()
 
   if (state.submitted && !state.formError) {
     return (
@@ -37,7 +37,20 @@ export default function App() {
             type="text"
             id="name"
             placeholder="Enter your name"
+            aria-invalid={name.error ? 'true' : 'false'}
+            aria-required="true"
             {...name.input}
+          />
+        </InputGroup>
+
+        <InputGroup error={phone.error}>
+          <label htmlFor="phone">Phone:</label>
+          <input
+            autoComplete="off"
+            type="text"
+            id="phone"
+            placeholder="Optional - Enter your phone number"
+            {...phone.input}
           />
         </InputGroup>
 
@@ -47,6 +60,8 @@ export default function App() {
             autoComplete="off"
             id="comment"
             placeholder="Enter your comment"
+            aria-invalid={comment.error ? 'true' : 'false'}
+            aria-required="true"
             {...comment.input}
           />
         </InputGroup>
