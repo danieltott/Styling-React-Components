@@ -1,0 +1,36 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+  padding: 1em;
+}
+
+* + * {
+  margin-top: 1em;
+}
+
+label {
+  display: block;
+}
+
+label + input,
+label + textarea {
+  margin-top: 0.5em;
+}
+
+input,
+textarea {
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  padding: 3px;
+  width: 100%;
+}
+
+[role='main'] {
+  max-width: 30rem;
+  margin: 0 auto;
+}
