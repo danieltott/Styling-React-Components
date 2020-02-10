@@ -19,18 +19,35 @@ label {
 
 label + input,
 label + textarea {
-  margin-top: 0.5em;
+  margin-top: 0.25em;
 }
 
 input,
 textarea {
   font-size: 1rem;
   border: 1px solid #ccc;
-  padding: 3px;
+  padding: 0.1875rem;
   width: 100%;
 }
 
 [role='main'] {
   max-width: 30rem;
   margin: 0 auto;
+}
+
+button {
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 5px;
+  background: indigo;
+  color: #fff;
+}
+
+button + button {
+  margin-left: 0.5rem;
+}
+
+[type='reset'] {
+  background: red;
+  color: #fff;
 }
