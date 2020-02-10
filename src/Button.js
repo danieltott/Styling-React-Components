@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const Button = ({
   children,
@@ -7,12 +7,17 @@ const Button = ({
   disabled,
   size,
   loading,
+  type,
   className,
   ...props
 }) => (
-  <button className={className} disabled={disabled} {...props}>
+  <button type={type} className={className} disabled={disabled} {...props}>
     {children}
   </button>
-);
+)
 
-export default Button;
+export default Button
+
+Button.defaultProps = {
+  type: 'button',
+}
