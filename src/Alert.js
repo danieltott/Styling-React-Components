@@ -1,12 +1,21 @@
 import React from 'react'
-import './Alert.scss'
+import styled from 'styled-components'
 
-const Alert = ({ children, className, variant, ...props }) => {
-  const combinedClassName = `alert alert-${variant} ${className}`
+const StyledAlert = styled.div`
+  border: 1px solid;
+  padding: 1em;
+  border-radius: ${props => props.theme.borderRadius};
+  margin-top: 1em;
+
+  background: ${props => props.theme.colors[props.variant]};
+  color: #fff;
+`
+
+const Alert = ({ children, ...props }) => {
   return (
-    <div className={combinedClassName} role="alert" {...props}>
+    <StyledAlert role="alert" {...props}>
       {children}
-    </div>
+    </StyledAlert>
   )
 }
 

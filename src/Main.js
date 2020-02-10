@@ -1,10 +1,15 @@
 import React from 'react'
-import './Main.scss'
+import styled from 'styled-components'
 
-const Main = ({ children, className, props }) => (
-  <div role="main" className={`container ${className}`} {...props}>
+const StyledMain = styled.div`
+  max-width: 40rem;
+  margin: 0 auto;
+`
+
+const Main = ({ children, ...props }) => (
+  <StyledMain role="main" {...props}>
     {children}
-  </div>
+  </StyledMain>
 )
 
 export default Main

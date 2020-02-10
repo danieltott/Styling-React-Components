@@ -1,11 +1,10 @@
 import React, { lazy, Suspense } from 'react'
 import useForm from './useForm'
 import Button from './Button'
-import InputGroup from './InputGroup'
+import InputGroup, { StyledFormControl } from './InputGroup'
 import FormActions from './FormActions'
 import Alert from './Alert'
 import Main from './Main'
-import './styles.scss'
 
 const ThankYou = lazy(() => import('./ThankYou'))
 
@@ -29,20 +28,20 @@ export default function App() {
       <form {...form}>
         <InputGroup error={name.error}>
           <label htmlFor="name">Name:</label>
-          <input
+          <StyledFormControl
             autoComplete="off"
             type="text"
             id="name"
             placeholder="Enter your name"
-            className={`form-control ${name.error ? 'is-invalid' : ''}`}
             aria-invalid={name.error ? 'true' : 'false'}
+            invalid={name.error ? true : false}
             required
             {...name.input}
           />
         </InputGroup>
         <InputGroup error={phone.error}>
           <label htmlFor="phone">Phone:</label>
-          <input
+          <StyledFormControl
             autoComplete="off"
             type="text"
             id="phone"
@@ -54,12 +53,13 @@ export default function App() {
 
         <InputGroup error={comment.error}>
           <label htmlFor="comment">Comment:</label>
-          <textarea
+          <StyledFormControl
+            as="textarea"
             autoComplete="off"
             id="comment"
             placeholder="Enter your comment"
-            className={`form-control ${comment.error ? 'is-invalid' : ''}`}
             aria-invalid={comment.error ? 'true' : 'false'}
+            invalid={comment.error ? true : false}
             required
             {...comment.input}
           />

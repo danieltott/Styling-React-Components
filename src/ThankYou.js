@@ -1,12 +1,22 @@
 import React from 'react'
+import styled from 'styled-components'
 import Button from './Button'
 import FormActions from './FormActions'
 import Alert from './Alert'
 import Main from './Main'
-import './ThankYou.scss'
+import svgData from './ThankYouSvgData'
+
+const StyledThankYou = styled(Main)`
+  background: rebeccapurple;
+  color: #fff;
+  max-width: 45rem;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  background-image: ${svgData};
+`
 
 const ThankYou = ({ reset }) => (
-  <Main className="ThankYou">
+  <StyledThankYou>
     <h1>Thank you!</h1>
     <Alert variant="success">Your message has been received.</Alert>
     <FormActions>
@@ -14,7 +24,7 @@ const ThankYou = ({ reset }) => (
         Send Another Message
       </Button>
     </FormActions>
-  </Main>
+  </StyledThankYou>
 )
 
 export default ThankYou
