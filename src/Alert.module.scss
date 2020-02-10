@@ -1,18 +1,18 @@
 @import 'variables';
 
-.alert {
+.root {
   border: 1px solid;
   padding: 1em;
   border-radius: $border-radius;
   margin-top: 1em;
 }
 
-.alert-danger {
-  background: $color-danger;
+.danger {
+  background: darken($color-danger, 30%);
   color: #fff;
 }
 
-.alert-success {
+.success {
   background: $color-success;
   color: #fff;
 }

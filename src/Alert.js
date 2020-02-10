@@ -1,8 +1,8 @@
 import React from 'react'
-import './Alert.scss'
+import styles from './Alert.module.scss'
 
 const Alert = ({ children, className, variant, ...props }) => {
-  const combinedClassName = `alert alert-${variant} ${className}`
+  const combinedClassName = `${styles.root} ${styles[variant]} ${className}`
   return (
     <div className={combinedClassName} role="alert" {...props}>
       {children}
@@ -14,4 +14,5 @@ export default Alert
 
 Alert.defaultProps = {
   variant: 'primary',
+  className: '',
 }

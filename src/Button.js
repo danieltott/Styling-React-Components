@@ -1,5 +1,5 @@
 import React from 'react'
-import './Button.scss'
+import styles from './Button.module.scss'
 
 const Button = ({
   children,
@@ -12,16 +12,16 @@ const Button = ({
   className,
   ...props
 }) => {
-  let combinedClassName = `btn btn-${variant} ${className}`
+  // let combinedClassName = `btn btn-${variant} ${className}`
 
-  if (size) {
-    combinedClassName = `${combinedClassName} btn-${size}`
-  }
+  // if (size) {
+  //   combinedClassName = `${combinedClassName} btn-${size}`
+  // }
 
   return (
     <button
       type={type}
-      className={combinedClassName}
+      className={`${styles.root} ${styles[variant]}`}
       disabled={disabled}
       {...props}
     >
