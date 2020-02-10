@@ -1,11 +1,12 @@
 import React from 'react'
-import Alert from './Alert'
 
-const InputGroup = ({ children, error, ...props }) => (
-  <div {...props}>
-    {children}
-    {error && <Alert>{error}</Alert>}
-  </div>
-)
+const InputGroup = ({ children, className = '', error, ...props }) => {
+  return (
+    <div className={`form-group ${className}`} {...props}>
+      {children}
+      {error && <div className="invalid-feedback">{error}</div>}
+    </div>
+  )
+}
 
 export default InputGroup

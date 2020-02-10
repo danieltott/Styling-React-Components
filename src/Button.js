@@ -10,14 +10,27 @@ const Button = ({
   type,
   className,
   ...props
-}) => (
-  <button type={type} className={className} disabled={disabled} {...props}>
-    {children}
-  </button>
-)
+}) => {
+  let combinedClassName = `btn btn-${variant} ${className}`
 
+  if (size) {
+    combinedClassName = `${combinedClassName} btn-${size}`
+  }
+
+  return (
+    <button
+      type={type}
+      className={combinedClassName}
+      disabled={disabled}
+      {...props}
+    >
+      {children}
+    </button>
+  )
+}
 export default Button
 
 Button.defaultProps = {
   type: 'button',
+  variant: 'primary',
 }

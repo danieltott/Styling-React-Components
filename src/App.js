@@ -37,18 +37,19 @@ export default function App() {
             type="text"
             id="name"
             placeholder="Enter your name"
+            className={`form-control ${name.error ? 'is-invalid' : ''}`}
             aria-invalid={name.error ? 'true' : 'false'}
-            aria-required="true"
+            required
             {...name.input}
           />
         </InputGroup>
-
         <InputGroup error={phone.error}>
           <label htmlFor="phone">Phone:</label>
           <input
             autoComplete="off"
             type="text"
             id="phone"
+            className="form-control"
             placeholder="Optional - Enter your phone number"
             {...phone.input}
           />
@@ -60,8 +61,9 @@ export default function App() {
             autoComplete="off"
             id="comment"
             placeholder="Enter your comment"
+            className={`form-control ${comment.error ? 'is-invalid' : ''}`}
             aria-invalid={comment.error ? 'true' : 'false'}
-            aria-required="true"
+            required
             {...comment.input}
           />
         </InputGroup>
@@ -81,6 +83,13 @@ export default function App() {
             disabled={state.submitIsDisabled}
             loading={state.formIsLoading}
           >
+            {state.formIsLoading && (
+              <span
+                class="spinner-border spinner-border-sm"
+                role="status"
+                aria-hidden="true"
+              ></span>
+            )}
             {state.formIsLoading ? 'Submitting...' : 'Submit Form!'}
           </Button>
         </FormActions>
