@@ -5,7 +5,7 @@ import InputGroup from './InputGroup'
 import FormActions from './FormActions'
 import Alert from './Alert'
 import Main from './Main'
-import './styles.css'
+import './styles.scss'
 
 export default function App() {
   const { name, phone, comment, form, reset, state } = useForm()
