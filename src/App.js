@@ -5,6 +5,7 @@ import InputGroup from './InputGroup'
 import FormActions from './FormActions'
 import Alert from './Alert'
 import Main from './Main'
+import './styles.css'
 
 export default function App() {
   const { name, phone, comment, form, reset, state } = useForm()
@@ -14,11 +15,11 @@ export default function App() {
       <Main>
         <h1>Thank you!</h1>
         <Alert variant="success">Your message has been received.</Alert>
-        <div>
+        <FormActions>
           <Button onClick={reset} variant="secondary">
             Send Another Message
           </Button>
-        </div>
+        </FormActions>
       </Main>
     )
   }
