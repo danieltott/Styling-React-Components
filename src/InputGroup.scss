@@ -1,0 +1,52 @@
+@import 'variables';
+
+.form-group {
+  margin-top: 1em;
+}
+
+.form-control {
+  font-family: $font-family;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: $border-radius;
+  padding: 0.1875rem;
+  width: 100%;
+  margin-top: 0.25em;
+  label {
+    display: block;
+  }
+
+  &.is-invalid {
+    border-color: $color-danger;
+  }
+}
+
+.invalid-feedback {
+  color: $color-danger;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+
+@media (min-width: 40rem) {
+  .form-group {
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    grid-gap: 1em;
+    label {
+      text-align: right;
+      padding-top: 5px;
+    }
+  }
+
+  .form-control {
+    width: auto;
+  }
+
+  .invalid-feedback {
+    grid-column: 2;
+  }
+}

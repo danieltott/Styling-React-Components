@@ -1,4 +1,5 @@
 import React from 'react'
+import './InputGroup.scss'
 
 const InputGroup = ({ children, className = '', error, ...props }) => {
   return (
