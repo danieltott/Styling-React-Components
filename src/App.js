@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import useForm from './useForm'
 import Button from './Button'
 import InputGroup from './InputGroup'
@@ -7,20 +7,16 @@ import Alert from './Alert'
 import Main from './Main'
 import './styles.scss'
 
+const ThankYou = lazy(() => import('./ThankYou'))
+
 export default function App() {
   const { name, phone, comment, form, reset, state } = useForm()
 
   if (state.submitted && !state.formError) {
     return (
-      <Main>
-        <h1>Thank you!</h1>
-        <Alert variant="success">Your message has been received.</Alert>
-        <FormActions>
-          <Button onClick={reset} variant="secondary">
-            Send Another Message
-          </Button>
-        </FormActions>
-      </Main>
+      <Suspense fallback={<div>Loading...</div>}>
+        <ThankYou reset={reset} />
+      </Suspense>
     )
   }
 
@@ -86,7 +82,7 @@ export default function App() {
           >
             {state.formIsLoading && (
               <span
-                class="spinner-border spinner-border-sm"
+                className="spinner-border spinner-border-sm"
                 role="status"
                 aria-hidden="true"
               ></span>
