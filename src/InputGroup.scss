@@ -31,7 +31,7 @@
   margin-top: 1em;
 }
 
-@media (min-width: 40rem) {
+@include media('>=tablet') {
   .form-group {
     display: grid;
     grid-template-columns: 10rem 1fr;
