@@ -23,7 +23,7 @@ export default function App() {
   }
 
   return (
-    <div>
+    <div role="main">
       <h1>Please fill out our form</h1>
       {state.submitted && state.formError && (
         <Alert variant="danger">Looks like there was an issue...</Alert>
