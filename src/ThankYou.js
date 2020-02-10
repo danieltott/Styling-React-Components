@@ -3,10 +3,10 @@ import Button from './Button'
 import FormActions from './FormActions'
 import Alert from './Alert'
 import Main from './Main'
-import './ThankYou.scss'
+import styles from './ThankYou.module.scss'
 
 const ThankYou = ({ reset }) => (
-  <Main className="ThankYou">
+  <Main className={styles.root}>
     <h1>Thank you!</h1>
     <Alert variant="success">Your message has been received.</Alert>
     <FormActions>

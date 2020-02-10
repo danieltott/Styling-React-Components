@@ -1,4 +1,5 @@
-.ThankYou {
+.root {
+  composes: root from './Main.module.scss';
   background: rebeccapurple;
   color: #fff;
   max-width: 45rem;
