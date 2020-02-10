@@ -53,6 +53,7 @@ export default function App() {
 
         <FormActions>
           <Button
+            type="reset"
             variant="danger"
             disabled={state.formIsLoading}
             onClick={reset}
