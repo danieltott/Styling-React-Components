@@ -125,7 +125,8 @@ const useForm = () => {
         }
       },
     },
-    reset: () => {
+    reset: e => {
+      e.preventDefault()
       dispatch({ type: 'ResetForm' })
     },
     state,
