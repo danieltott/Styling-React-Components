@@ -6,6 +6,10 @@ const initialState = {
     value: '',
     error: null,
   },
+  phone: {
+    value: '',
+    error: null,
+  },
   comment: {
     value: '',
     error: null,
@@ -21,7 +25,10 @@ const reducer = (state, action) => {
     case 'UpdateValue':
       const newInputObject = {
         value: action.value,
-        error: action.value ? null : 'This field is required',
+        error:
+          action.value || action.input === 'phone'
+            ? null
+            : 'This field is required',
       }
       const newState = {
         ...state,
@@ -100,6 +107,19 @@ const useForm = () => {
         },
       },
       error: state.name.error,
+    },
+    phone: {
+      input: {
+        value: state.phone.value,
+        onChange: e => {
+          dispatch({
+            type: 'UpdateValue',
+            input: 'phone',
+            value: e.target.value,
+          })
+        },
+      },
+      error: state.phone.error,
     },
     comment: {
       input: {
