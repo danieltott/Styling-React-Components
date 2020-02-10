@@ -4,13 +4,14 @@ import Button from './Button'
 import InputGroup from './InputGroup'
 import FormActions from './FormActions'
 import Alert from './Alert'
+import Main from './Main'
 
 export default function App() {
   const { name, comment, form, reset, state } = useForm()
 
   if (state.submitted && !state.formError) {
     return (
-      <div>
+      <Main>
         <h1>Thank you!</h1>
         <Alert variant="success">Your message has been received.</Alert>
         <div>
@@ -18,12 +19,12 @@ export default function App() {
             Send Another Message
           </Button>
         </div>
-      </div>
+      </Main>
     )
   }
 
   return (
-    <div role="main">
+    <Main>
       <h1>Please fill out our form</h1>
       {state.submitted && state.formError && (
         <Alert variant="danger">Looks like there was an issue...</Alert>
@@ -68,6 +69,6 @@ export default function App() {
           </Button>
         </FormActions>
       </form>
-    </div>
+    </Main>
   )
 }
