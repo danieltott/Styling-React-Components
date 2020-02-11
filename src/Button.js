@@ -40,7 +40,7 @@ const Button = ({
   const [isOver, setIsOver] = useState(false)
 
   let styleObj = {
-    fontSize: '1rem',
+    fontSize: isMobile ? '.8rem' : '1rem',
     padding: '0.75rem',
     borderRadius: '5px',
     border: '1px solid #333',
@@ -52,14 +52,6 @@ const Button = ({
     opacity: disabled ? 0.5 : 1,
     ...variations[variant],
     ...style,
-  }
-
-  // make buttons smaller in smaller breakpoints
-  if (isMobile) {
-    styleObj = {
-      ...styleObj,
-      fontSize: '.8rem',
-    }
   }
 
   return (
