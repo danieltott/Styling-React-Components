@@ -30,6 +30,7 @@ export const dark = {
   colors: {
     danger: 'darkred',
     success: 'green',
+    secondary: '#ccc',
     bodyBg: '#333',
     bodyCopy: '#fff',
   },
