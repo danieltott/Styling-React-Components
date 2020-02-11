@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Spinner from './Spinner'
 
 const StyledButton = styled.button`
   font-size: 1rem;
@@ -8,21 +9,17 @@ const StyledButton = styled.button`
   background: indigo;
   border: 1px solid #333;
   color: #fff;
-  cursor: pointer;
+  cursor: ${props =>
+    props.loading ? `wait` : props.disabled ? `not-allowed` : `pointer`};
   transition: all 0.2s ease-in-out;
   box-shadow: inset 0 0 0 0 rgba(255, 255, 255, 0);
+  opacity: ${props => (props.disabled ? 0.5 : 1)};
 
   &:hover {
-    box-shadow: inset 0 0 8px 5px rgba(255, 255, 255, 0.7);
-  }
-
-  &:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-
-    &:hover {
-      box-shadow: inset 0 0 0 0 rgba(255, 255, 255, 0);
-    }
+    box-shadow: ${props =>
+      props.disabled
+        ? `inset 0 0 0 0 rgba(255, 255, 255, 0)`
+        : `inset 0 0 8px 5px rgba(255, 255, 255, 0.7)`};
   }
 
   ${props => {
@@ -34,7 +31,7 @@ const StyledButton = styled.button`
       `
       case 'secondary':
         return `
-      background: #ccc;
+      background: ${props.theme.colors.secondary};
       color: #000;
       `
       default:
@@ -66,7 +63,8 @@ const Button = ({
   ...props
 }) => {
   return (
-    <StyledButton type={type} disabled={disabled} {...props}>
+    <StyledButton type={type} disabled={disabled} loading={loading} {...props}>
+      {loading && <Spinner />}
       {children}
     </StyledButton>
   )

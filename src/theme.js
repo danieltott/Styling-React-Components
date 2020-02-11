@@ -8,6 +8,7 @@ export const light = {
   colors: {
     danger: 'red',
     success: 'green',
+    secondary: '#ccc',
     bodyBg: '#fff',
     bodyCopy: '#333',
   },
