@@ -12,56 +12,66 @@ export default function App() {
   if (state.submitted && !state.formError) {
     return (
       <Main>
-        <h1>Thank you!</h1>
+        <h1 className="text-4xl font-bold">Thank you!</h1>
         <Alert variant="success">Your message has been received.</Alert>
-        <div>
+        <FormActions>
           <Button onClick={reset} variant="secondary">
             Send Another Message
           </Button>
-        </div>
+        </FormActions>
       </Main>
     )
   }
 
   return (
     <Main>
-      <h1>Please fill out our form</h1>
+      <h1 className="text-4xl font-bold">Please fill out our form</h1>
       {state.submitted && state.formError && (
         <Alert variant="danger">Looks like there was an issue...</Alert>
       )}
       <form {...form}>
         <InputGroup error={name.error}>
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name" className="block font-bold">
+            Name:
+          </label>
           <input
             autoComplete="off"
             type="text"
             id="name"
             placeholder="Enter your name"
-            className={`form-control ${name.error ? 'is-invalid' : ''}`}
+            className={`font-sans text-gray-800 border border-solid rounded w-full p-1 ${
+              name.error ? 'border-red-800' : 'border-gray-400'
+            }`}
             aria-invalid={name.error ? 'true' : 'false'}
             required
             {...name.input}
           />
         </InputGroup>
         <InputGroup error={phone.error}>
-          <label htmlFor="phone">Phone:</label>
+          <label htmlFor="phone" className="block font-bold">
+            Phone:
+          </label>
           <input
             autoComplete="off"
             type="text"
             id="phone"
-            className="form-control"
+            className={`font-sans text-gray-800 border border-solid rounded w-full p-1 border-gray-400`}
             placeholder="Optional - Enter your phone number"
             {...phone.input}
           />
         </InputGroup>
 
         <InputGroup error={comment.error}>
-          <label htmlFor="comment">Comment:</label>
+          <label htmlFor="comment" className="block font-bold">
+            Comment:
+          </label>
           <textarea
             autoComplete="off"
             id="comment"
             placeholder="Enter your comment"
-            className={`form-control ${comment.error ? 'is-invalid' : ''}`}
+            className={`font-sans text-gray-800 border border-solid rounded w-full p-1 ${
+              comment.error ? 'border-red-800' : 'border-gray-400'
+            }`}
             aria-invalid={comment.error ? 'true' : 'false'}
             required
             {...comment.input}

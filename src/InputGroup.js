@@ -2,9 +2,9 @@ import React from 'react'
 
 const InputGroup = ({ children, className = '', error, ...props }) => {
   return (
-    <div className={`form-group ${className}`} {...props}>
+    <div className={`mt-3  ${className}`} {...props}>
       {children}
-      {error && <div className="invalid-feedback">{error}</div>}
+      {error && <div className="text-red-800">{error}</div>}
     </div>
   )
 }

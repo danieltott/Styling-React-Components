@@ -1,7 +1,7 @@
 import React from 'react'
 
 const FormActions = ({ children, className = '', ...props }) => (
-  <div className={`d-flex justify-content-between ${className}`} {...props}>
+  <div className={`mt-3 flex justify-between ${className}`} {...props}>
     {children}
   </div>
 )
