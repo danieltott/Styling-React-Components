@@ -29,13 +29,15 @@ const Button = ({
   onMouseLeave,
   ...props
 }) => {
+  // use matchMedia to determine whether or not to use mobile styles
   const matcher = window.matchMedia(`(max-width: ${theme.breakpoints.phone}px)`)
-  const [isOver, setIsOver] = useState(false)
   const [isMobile, setIsMobile] = useState(matcher.matches)
-
   matcher.addListener(q => {
     setIsMobile(q.matches)
   })
+
+  // use a hook and mouse events to handle hover styles
+  const [isOver, setIsOver] = useState(false)
 
   let styleObj = {
     fontSize: '1rem',
