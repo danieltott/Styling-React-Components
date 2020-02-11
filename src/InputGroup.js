@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import 'styled-components/macro'
 import media from './media'
-import './InputGroup.scss'
 
 const StyledInvalidMessage = styled.div`
   color: ${props => props.theme.colors.danger};

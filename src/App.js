@@ -5,6 +5,7 @@ import InputGroup, { StyledFormControl } from './InputGroup'
 import FormActions from './FormActions'
 import Alert from './Alert'
 import Main from './Main'
+import Spinner from './Spinner'
 
 const ThankYou = lazy(() => import('./ThankYou'))
 
@@ -80,13 +81,7 @@ export default function App() {
             disabled={state.submitIsDisabled}
             loading={state.formIsLoading}
           >
-            {state.formIsLoading && (
-              <span
-                className="spinner-border spinner-border-sm"
-                role="status"
-                aria-hidden="true"
-              ></span>
-            )}
+            {state.formIsLoading && <Spinner />}
             {state.formIsLoading ? 'Submitting...' : 'Submit Form!'}
           </Button>
         </FormActions>
