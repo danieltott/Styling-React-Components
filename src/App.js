@@ -14,11 +14,11 @@ export default function App() {
       <Main>
         <h1>Thank you!</h1>
         <Alert variant="success">Your message has been received.</Alert>
-        <div>
+        <FormActions>
           <Button onClick={reset} variant="secondary">
             Send Another Message
           </Button>
-        </div>
+        </FormActions>
       </Main>
     )
   }
@@ -57,6 +57,7 @@ export default function App() {
               borderRadius: '5px',
               padding: '0.1875rem',
               width: '100%',
+              boxSizing: 'border-box',
             }}
             {...name.input}
           />
@@ -87,6 +88,7 @@ export default function App() {
               borderRadius: '5px',
               padding: '0.1875rem',
               width: '100%',
+              boxSizing: 'border-box',
             }}
             {...phone.input}
           />
@@ -118,6 +120,7 @@ export default function App() {
               borderRadius: '5px',
               padding: '0.1875rem',
               width: '100%',
+              boxSizing: 'border-box',
             }}
             {...comment.input}
           />

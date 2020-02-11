@@ -1,10 +1,15 @@
 import React from 'react'
-import Alert from './Alert'
 
-const InputGroup = ({ children, error, ...props }) => (
-  <div {...props}>
+const InputGroup = ({ children, error, style = {}, ...props }) => (
+  <div
+    style={{
+      marginTop: '1em',
+      ...style,
+    }}
+    {...props}
+  >
     {children}
-    {error && <Alert>{error}</Alert>}
+    {error && <div style={{ color: 'red' }}>{error}</div>}
   </div>
 )
 
