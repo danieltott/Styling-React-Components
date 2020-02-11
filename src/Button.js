@@ -33,4 +33,5 @@ export default Button
 Button.defaultProps = {
   type: 'button',
   variant: 'primary',
+  className: '',
 }
