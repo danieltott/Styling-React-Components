@@ -12,7 +12,7 @@ const Button = ({
   className,
   ...props
 }) => {
-  let combinedClassName = `btn btn-${variant} ${className}`
+  let combinedClassName = `btn ${variant} ${className}`
 
   if (size) {
     combinedClassName = `${combinedClassName} btn-${size}`
