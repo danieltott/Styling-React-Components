@@ -31,7 +31,15 @@ export default function App() {
       )}
       <form {...form}>
         <InputGroup error={name.error}>
-          <label htmlFor="name">Name:</label>
+          <label
+            htmlFor="name"
+            style={{
+              display: 'block',
+              fontWeight: 'bold',
+            }}
+          >
+            Name:
+          </label>
           <input
             autoComplete="off"
             type="text"
@@ -39,29 +47,78 @@ export default function App() {
             placeholder="Enter your name"
             aria-invalid={name.error ? 'true' : 'false'}
             aria-required="true"
+            style={{
+              marginTop: '0.25em',
+              fontFamily: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'`,
+              fontSize: '1rem',
+              borderWidth: 1,
+              borderStyle: 'solid',
+              borderColor: name.error ? 'red' : '#ccc',
+              borderRadius: '5px',
+              padding: '0.1875rem',
+              width: '100%',
+            }}
             {...name.input}
           />
         </InputGroup>
 
         <InputGroup error={phone.error}>
-          <label htmlFor="phone">Phone:</label>
+          <label
+            htmlFor="phone"
+            style={{
+              display: 'block',
+              fontWeight: 'bold',
+            }}
+          >
+            Phone:
+          </label>
           <input
             autoComplete="off"
             type="text"
             id="phone"
             placeholder="Optional - Enter your phone number"
+            style={{
+              marginTop: '0.25em',
+              fontFamily: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'`,
+              fontSize: '1rem',
+              borderWidth: 1,
+              borderStyle: 'solid',
+              borderColor: phone.error ? 'red' : '#ccc',
+              borderRadius: '5px',
+              padding: '0.1875rem',
+              width: '100%',
+            }}
             {...phone.input}
           />
         </InputGroup>
 
         <InputGroup error={comment.error}>
-          <label htmlFor="comment">Comment:</label>
+          <label
+            htmlFor="comment"
+            style={{
+              display: 'block',
+              fontWeight: 'bold',
+            }}
+          >
+            Comment:
+          </label>
           <textarea
             autoComplete="off"
             id="comment"
             placeholder="Enter your comment"
             aria-invalid={comment.error ? 'true' : 'false'}
             aria-required="true"
+            style={{
+              marginTop: '0.25em',
+              fontFamily: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'`,
+              fontSize: '1rem',
+              borderWidth: 1,
+              borderStyle: 'solid',
+              borderColor: comment.error ? 'red' : '#ccc',
+              borderRadius: '5px',
+              padding: '0.1875rem',
+              width: '100%',
+            }}
             {...comment.input}
           />
         </InputGroup>
